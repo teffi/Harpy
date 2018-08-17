@@ -199,7 +199,7 @@ typedef NS_ENUM(NSUInteger, HarpyAlertType)
  
  Do not use this method if you are using @c checkVersion or @c checkVersionDaily.
  */
-- (void)checkVersionAfterEveryNumberOfDays:(NSInteger)numberOfDays;
+- (void)checkVersionEveryNumberOfDays:(NSInteger)numberOfDays;
 
 #pragma mark - Unit Testing
 

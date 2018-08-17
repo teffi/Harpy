@@ -151,7 +151,7 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
     }
 }
 
-- (void)checkVersionAfterEveryNumberOfDays:(NSInteger)numberOfDays{
+- (void)checkVersionEveryNumberOfDays:(NSInteger)numberOfDays{
     /*
      On app's first launch, lastVersionCheckPerformedOnDate isn't set.
      Avoid false-positive fulfilment of second condition in this method.
