@@ -151,6 +151,27 @@ NSString * const HarpyLanguageVietnamese            = @"vi";
     }
 }
 
+- (void)checkVersionAfterEveryNumberOfDays:(NSInteger)numberOfDays{
+    /*
+     On app's first launch, lastVersionCheckPerformedOnDate isn't set.
+     Avoid false-positive fulfilment of second condition in this method.
+     Also, performs version check on first launch.
+     */
+    if (![self lastVersionCheckPerformedOnDate]) {
+        
+        // Set Initial Date
+        self.lastVersionCheckPerformedOnDate = [NSDate date];
+        
+        // Perform First Launch Check
+        [self checkVersion];
+    }
+    
+    // If number of days condition is satisfied, perform version check
+    if ([self numberOfDaysElapsedBetweenLastVersionCheckDate] >= numberOfDays) {
+        [self checkVersion];
+    }
+}
+
 #pragma mark - Helpers
 
 - (void)performVersionCheck {

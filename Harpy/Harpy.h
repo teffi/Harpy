@@ -192,6 +192,15 @@ typedef NS_ENUM(NSUInteger, HarpyAlertType)
  */
 - (void)checkVersionWeekly;
 
+/**
+ Perform custom number of days check for new version of your app.
+ Useful if user returns to you app from background after extended period of time.
+ Place in @c applicationDidBecomeActive:.
+ 
+ Do not use this method if you are using @c checkVersion or @c checkVersionDaily.
+ */
+- (void)checkVersionAfterEveryNumberOfDays:(NSInteger)numberOfDays;
+
 #pragma mark - Unit Testing
 
 /**
